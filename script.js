@@ -88,3 +88,12 @@ function desabilitar(){
     nTemp.removeEventListener('click', flipCard);
     resetar();
 }
+//---------função do tempo que desvira as cartas em quaso de não serem iguais---------//
+function desvirar(){
+    nParado = true;
+    setTimeout(() => {
+        nSeguir.classList.remove('flip');
+        nTemp.classList.remove('flip');
+        resetar();
+    }, 1000);
+}
