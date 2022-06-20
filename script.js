@@ -66,8 +66,19 @@ function flipCard(){
     nVirar = false;
     verificar();
 }
-/------------------função cartas aleatorias -------------------------//
+//------------------função cartas aleatorias -------------------------//
 function mexer(){
     
     return img[Math.floor(Math.random()*img.length)]
+}
+//-------------função que verifica se as cartas viradas são iguais-----//
+function verificar(){
+    if(nSeguir.innerHTML === nTemp.innerHTML){
+        movi();
+        desabilitar();
+        reiniciar();
+        return;
+    }
+    movi();
+    desvirar();
 }
