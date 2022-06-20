@@ -82,3 +82,9 @@ function verificar(){
     movi();
     desvirar();
 }
+//-----------função que desabilita o click nas cartas enquanto viradas ou iguais ------/
+function desabilitar(){
+    nSeguir.removeEventListener('click', flipCard);
+    nTemp.removeEventListener('click', flipCard);
+    resetar();
+}
