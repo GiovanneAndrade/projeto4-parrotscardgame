@@ -104,3 +104,33 @@ function resetar(){
     nSeguir = '';
     nTemp = '';
 }
+//------------------------função que avisa quantas vezes o usuario ganhou -----------------------------//
+let nContador$ = 0
+let nContador0 = 0
+
+function movi(){
+    nContador++;
+}
+let nResetar
+function reiniciar(){
+    nPartidas--;
+    if(nPartidas === 0){
+        setTimeout(() => {
+            if(nContador$ > 0){
+                alert(`Você ganhou em ${2 * nContador} jogadas! E em ${nContador$} minutos e ${nContador0} segundos!`);
+            } else {
+                alert(`Você ganhou em ${2 * nContador} jogadas! E em ${nContador0} segundos!`);
+            }
+            nResetar = prompt('Gostaria de reiniciar o jogo?').toLowerCase();
+            nContador$ = 0;
+            nContador0 = 0;
+            if(nResetar === 'sim'){
+                setTimeout(inicio, 1000);
+            } else if(nResetar === 'não') {
+                alert('até logo');
+                
+            } 
+        }, 1000);
+        clearInterval(nTempo);
+    }
+}
