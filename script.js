@@ -1,6 +1,6 @@
 const memoriaj = document.querySelector('.jmemoria')
-const img = ['bobrossparrot.gif', 'explodyparrot.gif','fiestaparrot.gif',
- 'metalparrot.gif', 'revertitparrot.gif', 'tripletsparrot.gif', 'unicornparrot.gif'];            
+const img = ['gifs/bobrossparrot.gif', 'gifs/explodyparrot.gif','gifs/fiestaparrot.gif',
+ 'gifs/metalparrot.gif', 'gifs/revertitparrot.gif', 'gifs/tripletsparrot.gif', 'gifs/unicornparrot.gif'];            
 
 //-----------------------------função do numero de cartas---------------------------------------------//
 //mostra o numero de cartas que ira aparecer na tela de acordo com o valor capturado no prompt
@@ -29,11 +29,10 @@ function inicio(){
     }
 
     nInicio.sort(mexer);
-    mexer()
-    
+   
     for(let i = 0; i < nCartas; i++){
         memoriaj.innerHTML += `<div class="card">
-        <img class="frente" src="front.png" alt="frente">
+        <img class="frente" src="gifs/front.png" alt="frente">
         <img class="costa" src="${nInicio[i]}" alt="costa">
         </div>`;
     }
@@ -68,8 +67,7 @@ function flipCard(){
 }
 //------------------função cartas aleatorias -------------------------//
 function mexer(){
-    
-    return img[Math.floor(Math.random()*img.length)]
+    return Math.random() - 0.5;
 }
 //-------------função que verifica se as cartas viradas são iguais-----//
 function verificar(){
@@ -129,7 +127,12 @@ function reiniciar(){
             } else if(nResetar === 'não') {
                 alert('até logo');
                 
-            } 
+            } else{
+                nResetar !== 'sim' || nResetar !== 'não'
+                nResetar = prompt('Gostaria de reiniciar o jogo?').toLowerCase();
+                
+            }
+            
         }, 1000);
         clearInterval(nTempo);
     }
