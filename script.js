@@ -97,3 +97,10 @@ function desvirar(){
         resetar();
     }, 1000);
 }
+//-----------função resetar, limpa as variaveis que armazenam as cartas selecionadas----//
+function resetar(){
+    nVirar = false;
+    nParado = false;
+    nSeguir = '';
+    nTemp = '';
+}
