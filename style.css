@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #EEF9BF;
+}
+main {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+}
+main > h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.5rem;
+    color: rgba(117, 183, 158, 1);
+}
+.jmemoria {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+    margin-top: 47px;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 117px;
+    height: 146px;
+    background-color: rgba(167, 233, 175, 1);
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all .2s linear;
+    perspective: 1000px;
+}
+.card > img {
+    width: 100px;
+    height: 100px;
+}
+.card.flip {
+    transform: rotateY(180deg);
+}
+.frente, .costa {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 8px;
+    top: 20px;
+    backface-visibility: hidden;
+}
+.costa {
+    transform: rotateY(180deg);
+}
+.contagem {
+    position: fixed;
+    top: 0px;
+    width: 80px;
+    height: 40px;
+    color: rgba(117, 183, 158, 1);
+    background-color: rgba(167, 233, 175, 1);
+    right: 0vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.625rem;
+    font-family: sans-serif;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-right: 373px;
+}
+@media (max-width: 600px){
+    main {
+        width: 80%;
+    }
+    main > h1 {
+        font-size: 2rem;
+    }
+    .contagem {
+        width: 60px;
+        height: 30px;
+        font-size: 1rem;
+        position: fixed;
+        top: 0px;
+        margin-right: 0;
+    }
+}
