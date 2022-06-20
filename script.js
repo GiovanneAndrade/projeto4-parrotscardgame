@@ -66,3 +66,8 @@ function flipCard(){
     nVirar = false;
     verificar();
 }
+/------------------função cartas aleatorias -------------------------//
+function mexer(){
+    
+    return img[Math.floor(Math.random()*img.length)]
+}
