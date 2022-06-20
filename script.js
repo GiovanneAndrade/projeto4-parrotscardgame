@@ -43,3 +43,26 @@ function inicio(){
 }
 
 setTimeout(inicio, 500);
+//------------------------função virada da carta----------------------------------// 
+// vira e desvira as cartas de acordo com as escolhas do usuario 
+
+let nVirar = false
+let nParado = false
+let nSeguir, nTemp
+function flipCard(){
+    if(nParado){
+        return;
+    }
+    if(this === nSeguir){
+        return;
+    }
+    this.classList.add('flip');
+    if(!nVirar){
+        nVirar = true;
+        nSeguir = this;
+        return;
+    }
+    nTemp = this;
+    nVirar = false;
+    verificar();
+}
