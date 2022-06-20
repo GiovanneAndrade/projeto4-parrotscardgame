@@ -134,3 +134,13 @@ function reiniciar(){
         clearInterval(nTempo);
     }
 }
+//-----------------função que adiciona o cronometro ---------//
+function cronometragem(){
+    nContador0++;
+    if(nContador0 == 60){
+        nContador0 = nContador0 % 60;
+        nContador$++;
+    }  
+    let cronometro = document.querySelector('.cronometragem');
+    cronometro.innerHTML = `<div class="contagem">0${nContador$}:${nContador0 < 10 ? `0` + nContador0 : nContador0}</div>`;
+}
